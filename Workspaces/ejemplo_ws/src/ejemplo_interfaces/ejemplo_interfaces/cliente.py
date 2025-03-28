@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
 from std_srvs.srv import SetBool
 
 class NodoCliente(Node):
   estado_solicitado = True
   def __init__(self):
-    super().__init__("nodo_servidor")
-    self.estado = False
+    super().__init__("nodo_cliente")
     self.get_logger().info("Nodo cliente inicializado. SetBool")
     self.cliente = self.create_client(SetBool, "servicio_bool")
     self.create_timer(1,self.mandar_solicitud_callback)

@@ -1,0 +1,6 @@
+# Solicitud
+int32 entrada 
+---
+# Respuesta
+bool exito
+string respuesta

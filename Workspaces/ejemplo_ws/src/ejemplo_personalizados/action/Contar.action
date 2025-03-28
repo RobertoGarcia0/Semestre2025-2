@@ -1,0 +1,8 @@
+# Solicitud
+int32 goal  # Número hasta el cual contar
+---
+# Mensaje del tópico
+int32 result  # Número final alcanzado
+---
+# Respuesta
+int32 feedback  # Número actual contado

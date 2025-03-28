@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             "nodo_publicador = ejemplo_interfaces.publicador:main",
             "nodo_suscriptor = ejemplo_interfaces.suscriptor:main",
+            "nodo_publicador_personalizado = ejemplo_interfaces.publicador_personalizado:main",
+            "nodo_suscriptor_personalizado = ejemplo_interfaces.suscriptor_personalizado:main",
             "nodo_cliente = ejemplo_interfaces.cliente:main",
             "nodo_servidor = ejemplo_interfaces.servidor:main"
         ],
