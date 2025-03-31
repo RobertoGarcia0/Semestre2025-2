@@ -9,14 +9,16 @@ from ejemplo_personalizados.action import Contar
 class ClienteAccion(Node):
   def __init__(self):
     super().__init__('nodo_accion_cliente')
-    self.cliente = ActionClient(self, Contar, 'accion_contar')
+    self.accion_cliente = ActionClient(self, Contar, 'accion_contar')
 
   def enviar_solicitud(self, numero_objetivo:int):
     self.get_logger().info(f"Enviando meta: contar hasta {numero_objetivo}")
     solicitud = Contar.Goal()
     solicitud.objetivo = numero_objetivo
 
-    self.cliente.wait_for_server()
+    while not self.cliente.wait_for_service(1):
+      self.get_logger().warn("Servidor no disponible. Esperando")
+
     futuro = self.cliente.send_goal_async(solicitud, self.feedback_callback)
     futuro.add_done_callback(self.respuesta_solicitud_callback)
 

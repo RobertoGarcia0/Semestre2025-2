@@ -9,10 +9,10 @@ import time
 class ServidorAccion(Node):
   def __init__(self):
     super().__init__('nodo_accion_contar')
-    self.accion = ActionServer(self, Contar, "accion_contar", self.ejecucion_callback)
+    self.accion_server = ActionServer(self, Contar, "accion_contar", self.ejecucion_callback)
     self.get_logger().info("Servidor de acción 'accion_contar' iniciado.")
-    self.accion.register_goal_callback(self.solicitud_recibida_callback)
-    self.accion.register_cancel_callback(self.solicitud_cancelada__callback)
+    self.accion_server.register_goal_callback(self.solicitud_recibida_callback)
+    self.accion_server.register_cancel_callback(self.solicitud_cancelada__callback)
 
   def solicitud_recibida_callback(self, solicitud:Contar.Goal):
     if solicitud.objetivo <= 0:
