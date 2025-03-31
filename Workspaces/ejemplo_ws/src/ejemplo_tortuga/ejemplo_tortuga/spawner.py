@@ -52,7 +52,7 @@ class SpawnerTortuga(Node):
     except Exception as e:
       self.get_logger().error(f'Error al llamar al servicio Spawn: {str(e)}')
     finally:
-      raise KeyboardInterrupt
+      raise SystemExit
 
 def main():
   try:

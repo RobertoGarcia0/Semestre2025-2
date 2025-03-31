@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'ejemplo_tortuga'
+package_name = 'ejemplo_bringup'
 
 setup(
     name=package_name,
@@ -20,9 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "nodo_velocidad = ejemplo_tortuga.velocidad:main",
-            "nodo_velocidad_parametros = ejemplo_tortuga.velocidad_parametros:main",
-            "nodo_spawner = ejemplo_tortuga.spawner:main"
         ],
     },
 )

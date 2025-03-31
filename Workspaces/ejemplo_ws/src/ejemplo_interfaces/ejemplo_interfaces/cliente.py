@@ -29,6 +29,7 @@ class NodoCliente(Node):
       self.get_logger().info(respuesta.message)
     else:
       self.get_logger().warn(respuesta.message)
+    raise SystemExit
 def main():
   try:
     rclpy.init()

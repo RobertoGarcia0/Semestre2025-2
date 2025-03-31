@@ -2,16 +2,15 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
-import turtlesim
 
-class ROSTwistPublisher(Node):
+class PublicadorVelocidad(Node):
   def __init__(self):
     super().__init__("nodo_tortuga_velocidad")
     self.get_logger().info("Inicializando nodo publicador de velocidad")
     
     self.declare_parameter("nombre", "turtle1")
-    self.declare_parameter("vel_lineal", 1.0)
-    self.declare_parameter("vel_angular", 0.5)
+    self.declare_parameter("vel_lineal", 3.5)
+    self.declare_parameter("vel_angular", 1.5)
     self.declare_parameter("tiempo", 1.0)
     self.nombre = self.get_parameter("nombre").get_parameter_value().string_value
     self.vel_lineal = self.get_parameter("vel_lineal").get_parameter_value().double_value
@@ -36,7 +35,7 @@ class ROSTwistPublisher(Node):
 def main(args = None):
   try:
     rclpy.init(args = args)
-    node = ROSTwistPublisher()
+    node = PublicadorVelocidad()
     rclpy.spin(node)
     rclpy.shutdown()
   except KeyboardInterrupt as e:

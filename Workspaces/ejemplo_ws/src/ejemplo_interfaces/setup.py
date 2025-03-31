@@ -25,7 +25,9 @@ setup(
             "nodo_publicador_personalizado = ejemplo_interfaces.publicador_personalizado:main",
             "nodo_suscriptor_personalizado = ejemplo_interfaces.suscriptor_personalizado:main",
             "nodo_cliente = ejemplo_interfaces.cliente:main",
-            "nodo_servidor = ejemplo_interfaces.servidor:main"
+            "nodo_servidor = ejemplo_interfaces.servidor:main",
+            "nodo_accion_cliente = ejemplo_interfaces.accion_cliente:main",
+            "nodo_accion_servidor = ejemplo_interfaces.accion_servidor:main"
         ],
     },
 )
