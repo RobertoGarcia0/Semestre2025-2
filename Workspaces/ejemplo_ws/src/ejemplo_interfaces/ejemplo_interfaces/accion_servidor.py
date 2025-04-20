@@ -26,7 +26,6 @@ class ServidorAccion(Node):
     return CancelResponse.ACCEPT
 
   def ejecucion_callback(self, accion_servidor_objetivo:ServerGoalHandle):
-    pausa = self.create_rate(1.0)
     solicitud:Contar.Goal = accion_servidor_objetivo.request
     valor_objetivo = solicitud.objetivo
     feedback_msg = Contar.Feedback()
