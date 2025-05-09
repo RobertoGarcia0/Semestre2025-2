@@ -27,7 +27,7 @@ class GeneradorTrayectoria():
     self.xi_0_P = Matrix([[self.T_0_P[0, 3]],
                           [self.T_0_P[2, 3]],
                           [self.theta_0_1 + self.theta_1_2 + self.theta_2_3]])
-  def generar_trayectoria(self, q_in = (pi/4, -pi/2, pi/4), xi_fn = (0.5, 0.2, 0), tie = (0, 2), frec = 10):
+  def generar_trayectoria(self, q_in = (pi/4, -pi/2, 3*pi/8), xi_fn = (0.5, 0.2, 0), tie = (0, 2), frec = 60):
     print("Creando trayectoria")
     #Variables para polinomio lambda
     self.t, self.a_0, self.a_1, self.a_2, self.a_3, self.a_4, self.a_5 = symbols(
@@ -85,6 +85,10 @@ class GeneradorTrayectoria():
       [self.lam_dot_dot_s * (xi_fn[1] - xi_in[1])],
       [self.lam_dot_dot_s * (xi_fn[2] - xi_in[2])]
     ])
+    print("Vector segunda derivada")
+    print(self.xi)
+    print(self.xi_dot)
+    print(self.xi_dot_dot)
 
     # Muestreo del espacio de trabajo
     print("Muestreando trayectoria")
